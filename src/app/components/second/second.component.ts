@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-second',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./second.component.scss']
 })
 export class SecondComponent {
+
+  constructor(public dataServ:DataService) {}
 
 }

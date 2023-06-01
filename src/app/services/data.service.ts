@@ -13,11 +13,30 @@ export class DataService {
   constructor() { }
 
   increment(){
-
+    const counterValuesArray=   this.counterValuesSubject.value;
+    const lastCounterValue = counterValuesArray[counterValuesArray.length-1];
+    const newCounterValue=
+      {
+        value: lastCounterValue.value+1,
+        changes:lastCounterValue.changes+1,
+        type: 'increment'
+      }
+    counterValuesArray.push(newCounterValue);
+    this.counterValuesSubject.next(counterValuesArray);
   }
 
 
   decrement(){
+    const counterValuesArray=   this.counterValuesSubject.value;
+    const lastCounterValue = counterValuesArray[counterValuesArray.length-1];
+    const newCounterValue=
+      {
+        value: lastCounterValue.value-1,
+        changes:lastCounterValue.changes+1,
+        type: 'decrement'
+      }
+    counterValuesArray.push(newCounterValue);
+    this.counterValuesSubject.next(counterValuesArray);
 
   }
 

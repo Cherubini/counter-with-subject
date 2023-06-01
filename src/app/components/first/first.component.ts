@@ -10,7 +10,4 @@ export class FirstComponent {
 
   constructor(public dataServ:DataService){ }
 
-
-
-
 }
